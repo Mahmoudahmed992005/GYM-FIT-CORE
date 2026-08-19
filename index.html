@@ -25,20 +25,39 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header class="hero-header p-5">
+    <header class="hero-header p-4 p-md-5">
       <div class="container">
         <nav
           class="navbar-fit d-flex flex-fill justify-content-between align-items-center"
         >
           <span class="fw-bolder fs-4 text-white brand-mark">FitCore</span>
-          <div class="nav-links d-flex gap-4">
+          <div class="nav-links d-none d-lg-flex gap-4" id="navLinks">
             <a href="#hero" class="nav-link-fit">Why Us</a>
             <a href="#review" class="nav-link-fit">Reviews</a>
             <a href="#form" class="nav-link-fit">Join Now</a>
             <a href="signin.html" class="nav-link-fit">Login</a>
           </div>
+          <button
+            class="nav-toggle-fit d-lg-none"
+            id="navToggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
         </nav>
-        <div class="d-flex flex-wrap pt-5">
+        <div
+          class="nav-links-mobile d-lg-none flex-column gap-1"
+          id="navLinksMobile"
+        >
+          <a href="#hero" class="nav-link-fit-mobile">Why Us</a>
+          <a href="#review" class="nav-link-fit-mobile">Reviews</a>
+          <a href="#form" class="nav-link-fit-mobile">Join Now</a>
+          <a href="signin.html" class="nav-link-fit-mobile">Login</a>
+        </div>
+        <div class="d-flex flex-wrap pt-4 pt-md-5">
           <div class="hero-text">
             <span class="eyebrow-pill"
               >24/7 Access · 6 Branches in Cairo &amp; Giza</span
@@ -88,8 +107,8 @@
           >
         </div>
 
-        <div class="row gap-4 m-0 mt-5 mb-5">
-          <div class="col-12 col-md feature-card feature-blue p-5 rounded-4">
+        <div class="feature-grid mt-5 mb-5">
+          <div class="feature-card feature-blue p-3 p-md-5 rounded-4">
             <div class="center flex-column gap-3 text-center">
               <div class="icon-circle icon-blue center">
                 <i class="fa-solid fa-dumbbell"></i>
@@ -103,7 +122,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md feature-card feature-green p-5 rounded-4">
+          <div class="feature-card feature-green p-3 p-md-5 rounded-4">
             <div class="center flex-column gap-3 text-center">
               <div class="icon-circle icon-green center">
                 <i class="fa-solid fa-user-tie"></i>
@@ -117,21 +136,25 @@
             </div>
           </div>
 
-          <div class="col-12 col-md feature-card feature-violet rounded-4 p-5">
-            <div class="center flex-column gap-3 text-center">
+          <div
+            class="feature-card feature-card-wide feature-violet rounded-4 p-3 p-md-5"
+          >
+            <div class="feature-card-wide-inner">
               <div class="icon-circle icon-violet center">
                 <i class="fa-solid fa-calendar-check"></i>
               </div>
-              <h5 class="fw-bolder">Flexible Plans</h5>
-              <p>
-                Monthly, quarterly, or annual memberships, with a student
-                discount and a free 3-day trial pass for first-time visitors.
-              </p>
+              <div class="feature-card-wide-text">
+                <h5 class="fw-bolder">Flexible Plans</h5>
+                <p class="m-0">
+                  Monthly, quarterly, or annual memberships, with a student
+                  discount and a free 3-day trial pass for first-time visitors.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="d-flex gap-4 m-0 mb-5 align-items-center">
+        <div class="d-flex flex-wrap gap-4 m-0 mb-5 align-items-center">
           <div class="col-12 col-md-6">
             <div class="img-dev">
               <img
@@ -141,7 +164,7 @@
               />
             </div>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md more-than-gym">
             <h4 class="fw-bolder m-2">More Than Just a Gym</h4>
 
             <div class="section-title-sm m-2 mt-3">
@@ -185,8 +208,8 @@
           >
         </div>
 
-        <div class="row gap-4 m-0 mt-5 pb-5">
-          <div class="col-12 col-md feature-card feature-blue p-5 rounded-4">
+        <div class="testimonial-grid mt-5 pb-5">
+          <div class="feature-card feature-blue p-4 p-md-5 rounded-4">
             <div class="center flex-column gap-3 text-center">
               <div class="hambozo w-100">
                 <div class="d-flex mb-3 align-items-center">
@@ -211,7 +234,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md feature-card feature-green p-5 rounded-4">
+          <div class="feature-card feature-green p-4 p-md-5 rounded-4">
             <div class="center flex-column gap-3 text-center">
               <div class="hambozo w-100">
                 <div class="d-flex mb-3 align-items-center">
@@ -236,7 +259,7 @@
             </div>
           </div>
 
-          <div class="col-12 col-md feature-card feature-violet p-5 rounded-4">
+          <div class="feature-card feature-violet p-4 p-md-5 rounded-4">
             <div class="center flex-column gap-3 text-center">
               <div class="hambozo w-100">
                 <div class="d-flex mb-3 align-items-center">
@@ -292,7 +315,7 @@
     </section>
 
     <section id="form">
-      <div class="container p-5">
+      <div class="container p-3 p-md-5">
         <div class="text-center my-5">
           <h2 class="fw-bolder pb-3">Join FitCore Today</h2>
           <span class="fs-6 fw-light d-block"
@@ -314,7 +337,7 @@
             </div>
 
             <div class="row g-3">
-              <div class="col-12 col-sm-6">
+              <div class="col-6">
                 <label class="form-label-fit">Full Name</label>
                 <div class="input-icon-wrap">
                   <i class="fa-regular fa-user input-icon"></i>
@@ -328,7 +351,7 @@
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6">
+              <div class="col-6">
                 <label class="form-label-fit">Username</label>
                 <div class="input-icon-wrap">
                   <i class="fa-solid fa-at input-icon"></i>
@@ -356,7 +379,7 @@
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6">
+              <div class="col-6">
                 <label class="form-label-fit">Password</label>
                 <div class="input-icon-wrap">
                   <i class="fa-solid fa-lock input-icon"></i>
@@ -370,7 +393,7 @@
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6">
+              <div class="col-6">
                 <label class="form-label-fit">Confirm Password</label>
                 <div class="input-icon-wrap">
                   <i class="fa-solid fa-lock input-icon"></i>
@@ -384,7 +407,7 @@
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6">
+              <div class="col-6">
                 <label class="form-label-fit">Date of Birth</label>
                 <div class="input-icon-wrap">
                   <i class="fa-regular fa-calendar input-icon"></i>
@@ -397,7 +420,7 @@
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6">
+              <div class="col-6">
                 <label class="form-label-fit">Gender</label>
                 <div class="input-icon-wrap">
                   <i class="fa-regular fa-circle-user input-icon"></i>
@@ -430,45 +453,98 @@
       </div>
     </section>
 
-    <footer class="p-3 bg-blue-dark">
-      <div class="container d-flex flex-wrap p-5 gap-4">
-        <div class="footer-col footer-col-lg">
-          <h4 class="text-white fw-bold">FitCore</h4>
-          <span class="fw-lighter l"
-            >A 24/7 gym with six branches across Cairo and Giza. Free weights,
+    <footer class="site-footer bg-blue-dark">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-top d-flex align-items-center gap-2">
+            <div class="footer-logo center">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <span class="text-white fw-bold fs-4 brand-mark">FitCore</span>
+          </div>
+          <p class="footer-about">
+            A 24/7 gym with six branches across Cairo and Giza. Free weights,
             cardio, group classes, and certified trainers included in every
-            membership. First 3-day trial pass is on us.</span
-          >
+            membership. First 3-day trial pass is on us.
+          </p>
+          <div class="footer-social d-flex gap-2">
+            <a href="#" class="footer-social-icon center" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="footer-social-icon center"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="footer-social-icon center" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="#" class="footer-social-icon center" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
+
         <div class="footer-col">
-          <h4 class="text-white fw-bold">Quick Links</h4>
-          <a href="#hero" class="fw-lighter l d-block footer-link">Why Us</a>
-          <a href="#review" class="fw-lighter l d-block footer-link">Reviews</a>
-          <a href="#form" class="fw-lighter l d-block footer-link">Join Now</a>
-          <a href="signin.html" class="fw-lighter l d-block footer-link"
-            >Login</a
-          >
+          <h6 class="footer-heading">Quick Links</h6>
+          <ul class="footer-list">
+            <li><a href="#hero" class="footer-link">Why Us</a></li>
+            <li><a href="#review" class="footer-link">Reviews</a></li>
+            <li><a href="#form" class="footer-link">Join Now</a></li>
+            <li><a href="signin.html" class="footer-link">Login</a></li>
+          </ul>
         </div>
+
         <div class="footer-col">
-          <h4 class="text-white fw-bold">Contact Info</h4>
-          <span class="fw-lighter l d-block"
-            >Nasr City Branch, Cairo, Egypt</span
-          >
-          <a href="tel:+20221234567" class="fw-lighter l d-block footer-link"
-            >+20 2 2123 4567</a
-          >
-          <a
-            href="mailto:info@fitcoregym.com"
-            class="fw-lighter l d-block footer-link"
-            >info@fitcoregym.com</a
-          >
+          <h6 class="footer-heading">Contact Info</h6>
+          <ul class="footer-list">
+            <li>
+              <a href="tel:+20221234567" class="footer-link">
+                <i class="fa-solid fa-phone footer-list-icon"></i>+20 2 2123
+                4567
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@fitcoregym.com" class="footer-link">
+                <i class="fa-regular fa-envelope footer-list-icon"></i
+                >info@fitcoregym.com
+              </a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot footer-list-icon"></i>Nasr City
+              Branch, Cairo, Egypt
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h6 class="footer-heading">Working Hours</h6>
+          <ul class="footer-list">
+            <li>
+              <i class="fa-regular fa-clock footer-list-icon"></i>Open 24/7
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot footer-list-icon"></i>6
+              Branches, Cairo &amp; Giza
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="container text-center pb-3">
-        <span class="fw-lighter l"
-          >© 2026 FitCore Gym. All rights reserved.</span
-        >
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span class="fw-lighter l m-0"
+            >© 2026 FitCore Gym. All rights reserved.</span
+          >
+          <div class="footer-bottom-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
+    <script src="./page.js"></script>
   </body>
 </html>
